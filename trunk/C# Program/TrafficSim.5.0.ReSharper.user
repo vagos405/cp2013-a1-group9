@@ -1,0 +1,314 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:MenuForm.Designer.cs" caret="0" fromTop="0" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:MenuForm.cs" caret="2326" fromTop="22" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:Program.cs" caret="471" fromTop="16" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:Intersection.cs" caret="722" fromTop="12" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:VerticalLane.cs" caret="374" fromTop="14" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:Car.cs" caret="467" fromTop="20" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:HorizontalLane.cs" caret="371" fromTop="15" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:TrafficLight.cs" caret="921" fromTop="27" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:IntersectionBlock.cs" caret="216" fromTop="9" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5891" fromTop="55" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="1451" fromTop="26" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2074" fromTop="21" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="4226" fromTop="20" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="4034" fromTop="26" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3845" fromTop="21" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3432" fromTop="4" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3432" fromTop="12" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3845" fromTop="19" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2092" fromTop="17" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3818" fromTop="20" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="4176" fromTop="26" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5826" fromTop="19" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5113" fromTop="27" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="430" fromTop="11" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="1248" fromTop="20" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="6357" fromTop="7" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2229" fromTop="10" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="4914" fromTop="17" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="4636" fromTop="12" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3932" fromTop="10" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2910" fromTop="4" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="3426" fromTop="16" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2779" fromTop="5" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:TrafficLight.cs" caret="272" fromTop="11" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:TrafficLight.cs" caret="1195" fromTop="28" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:TrafficLight.cs" caret="921" fromTop="12" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5435" fromTop="9" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="2779" fromTop="14" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5174" fromTop="7" />
+      <File id="9B268157-F5A6-47DF-A924-8A483F50B00A/f:SimForm.cs" caret="5381" fromTop="10" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.3\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="MenuScreen" priority="0" />
+      <Item value="simulation" priority="4" />
+      <Item value="this" priority="10" />
+      <Item value="Owner" priority="1" />
+      <Item value="Hide`0" priority="0" />
+      <Item value="string" priority="4" />
+      <Item value="Array`0" priority="0" />
+      <Item value="private" priority="15" />
+      <Item value="public" priority="20" />
+      <Item value="int" priority="30" />
+      <Item value="double" priority="8" />
+      <Item value="HLaneBox" priority="4" />
+      <Item value="Graphics`0" priority="0" />
+      <Item value="e" priority="0" />
+      <Item value="SimPanel" priority="1" />
+      <Item value="ControlPaint`0" priority="0" />
+      <Item value="Image`0" priority="10" />
+      <Item value="VLane" priority="4" />
+      <Item value="pic" priority="6" />
+      <Item value="PictureBox" priority="2" />
+      <Item value="new" priority="17" />
+      <Item value="PictureBox`0" priority="8" />
+      <Item value="picbox1" priority="5" />
+      <Item value="Point" priority="5" />
+      <Item value="Refresh`0" priority="2" />
+      <Item value="AutoSize" priority="0" />
+      <Item value="picboxes" priority="2" />
+      <Item value="for" priority="0" />
+      <Item value="in" priority="2" />
+      <Item value="numpic" priority="1" />
+      <Item value="i" priority="9" />
+      <Item value="CreatePictures`0" priority="0" />
+      <Item value="HLane" priority="4" />
+      <Item value="foreach" priority="2" />
+      <Item value="vLanes" priority="3" />
+      <Item value="Length" priority="3" />
+      <Item value="lane" priority="6" />
+      <Item value="position" priority="4" />
+      <Item value="VLaneBox" priority="0" />
+      <Item value="HProbBox" priority="0" />
+      <Item value="VProbBox" priority="0" />
+      <Item value="Width" priority="3" />
+      <Item value="try" priority="1" />
+      <Item value="catch" priority="1" />
+      <Item value="Exception`0" priority="1" />
+      <Item value="BaseNumberConverter`0" priority="0" />
+      <Item value="return" priority="1" />
+      <Item value="number" priority="0" />
+      <Item value="value" priority="1" />
+      <Item value="if" priority="15" />
+      <Item value="MessageBox`0" priority="0" />
+      <Item value="IntCheck`0" priority="0" />
+      <Item value="HLaneMax" priority="1" />
+      <Item value="hLaneInt" priority="0" />
+      <Item value="vLaneInt" priority="0" />
+      <Item value="hProbDoub" priority="0" />
+      <Item value="vProbDoub" priority="0" />
+      <Item value="DrawLanes`0" priority="1" />
+      <Item value="HorizontalLane`0" priority="6" />
+      <Item value="SimForm`0" priority="0" />
+      <Item value="hLanes" priority="3" />
+      <Item value="HorizontalLane" priority="1" />
+      <Item value="void" priority="4" />
+      <Item value="RotateFlipType`0" priority="1" />
+      <Item value="Rotate90FlipNone" priority="0" />
+      <Item value="Height" priority="4" />
+      <Item value="Form`0" priority="1" />
+      <Item value="parentForm" priority="6" />
+      <Item value="VerticalLane`0" priority="0" />
+      <Item value="using" priority="0" />
+      <Item value="System" priority="0" />
+      <Item value="CodeDom" priority="0" />
+      <Item value="Windows.Forms" priority="0" />
+      <Item value="Panel`0" priority="0" />
+      <Item value="Road`0" priority="0" />
+      <Item value="CreateParams`0" priority="0" />
+      <Item value="Intersection`0" priority="1" />
+      <Item value="Control`0" priority="2" />
+      <Item value="Parent" priority="2" />
+      <Item value="section" priority="0" />
+      <Item value="Intersection" priority="0" />
+      <Item value="Location" priority="2" />
+      <Item value="Car`0" priority="3" />
+      <Item value="ArrangeDirection`0" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="Cars" priority="5" />
+      <Item value="Random`0" priority="0" />
+      <Item value="Random" priority="0" />
+      <Item value="random" priority="5" />
+      <Item value="min" priority="0" />
+      <Item value="RandomNumber`0" priority="1" />
+      <Item value="VProb" priority="0" />
+      <Item value="Car" priority="0" />
+      <Item value="newCar" priority="6" />
+      <Item value="Section" priority="8" />
+      <Item value="ArrayList" priority="0" />
+      <Item value="Image" priority="2" />
+      <Item value="Label`0" priority="0" />
+      <Item value="label1" priority="0" />
+      <Item value="car" priority="11" />
+      <Item value="ListBindingConverter`0" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="CycleBox" priority="0" />
+      <Item value="const" priority="1" />
+      <Item value="Cycles" priority="1" />
+      <Item value="IntersectionBlock`0" priority="1" />
+      <Item value="block" priority="0" />
+      <Item value="Color" priority="0" />
+      <Item value="Color`0" priority="0" />
+      <Item value="TrafficLight`0" priority="4" />
+      <Item value="colour" priority="1" />
+      <Item value="Colour" priority="0" />
+      <Item value="else" priority="5" />
+      <Item value="CreateLights`0" priority="0" />
+      <Item value="lights" priority="9" />
+      <Item value="CanEnableIme" priority="0" />
+      <Item value="car2" priority="1" />
+      <Item value="bool" priority="1" />
+      <Item value="true" priority="2" />
+      <Item value="canMove" priority="1" />
+      <Item value="false" priority="0" />
+      <Item value="noOfCyclesDone" priority="3" />
+      <Item value="trafficTime" priority="0" />
+      <Item value="Rotated" priority="1" />
+      <Item value="Rotate`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.SimForm">
+      <Item value="Show`0" priority="1" />
+      <Item value="Owner" priority="0" />
+      <Item value="HLane" priority="1" />
+      <Item value="Close`0" priority="0" />
+      <Item value="Width" priority="1" />
+      <Item value="Height" priority="0" />
+      <Item value="Cycles" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.MenuForm">
+      <Item value="Hide`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Form">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Panel">
+      <Item value="Paint" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Image">
+      <Item value="FromFile`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.PictureBox">
+      <Item value="Image" priority="1" />
+      <Item value="Location" priority="1" />
+      <Item value="Width" priority="0" />
+      <Item value="Height" priority="0" />
+      <Item value="SizeMode" priority="0" />
+      <Item value="Parent" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Image">
+      <Item value="Width" priority="4" />
+      <Item value="Height" priority="8" />
+      <Item value="RotateFlip`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@TrafficSim.SimForm">
+      <Item value="ActiveForm" priority="1" />
+      <Item value="FromChildHandle`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Point">
+      <Item value="X" priority="7" />
+      <Item value="Y" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.HorizontalLane">
+      <Item value="PosY`0" priority="0" />
+      <Item value="Parent" priority="0" />
+      <Item value="Image" priority="0" />
+      <Item value="Width" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.Intersection">
+      <Item value="HLane" priority="0" />
+      <Item value="VLane" priority="0" />
+      <Item value="vLanes" priority="2" />
+      <Item value="SendToBack`0" priority="0" />
+      <Item value="hLanes" priority="1" />
+      <Item value="block" priority="2" />
+      <Item value="Handle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.VerticalLane">
+      <Item value="Height" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Location" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ArrayList">
+      <Item value="Add`0" priority="0" />
+      <Item value="Remove`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Random">
+      <Item value="Next`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.Car">
+      <Item value="Direction" priority="1" />
+      <Item value="Location" priority="10" />
+      <Item value="Image" priority="3" />
+      <Item value="Rotate`0" priority="0" />
+      <Item value="BringToFront`0" priority="0" />
+      <Item value="Width" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.PictureBoxSizeMode">
+      <Item value="AutoSize" priority="0" />
+      <Item value="StretchImage" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="RemoveAll`0" priority="1" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.IntersectionBlock">
+      <Item value="Width" priority="0" />
+      <Item value="Stretch`0" priority="0" />
+      <Item value="BringToFront`0" priority="0" />
+      <Item value="BackColor" priority="0" />
+      <Item value="Location" priority="1" />
+      <Item value="Height" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="Black" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TrafficSim.TrafficLight">
+      <Item value="BringToFront`0" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Height" priority="0" />
+      <Item value="setColour`0" priority="2" />
+      <Item value="Rotate`0" priority="0" />
+      <Item value="Colour" priority="3" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
