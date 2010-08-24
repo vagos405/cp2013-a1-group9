@@ -17,12 +17,9 @@ namespace TrafficSim
         private int noOfCyclesDone;
         private const int GreenTime = 8;
         private const int YellowTime = 2;
-        private int ActiveLight;
 
         private Intersection Section;
-        private List<Car> Cars;
         private static Random random;
-        private TrafficLight[] lights;
 
         public SimForm()
         {
@@ -40,9 +37,7 @@ namespace TrafficSim
             CyclesBox.Text = Cycles.ToString();
             Section = new Intersection(this,HLane,VLane);
             Section.SendToBack();
-            Cars = new List<Car>();
             random = new Random();
-            CreateLights();
             noOfCyclesDone = 0;
         }
 
@@ -52,28 +47,13 @@ namespace TrafficSim
             Close();
         }
 
-        private void CreateLights()
-        {
-            lights = new TrafficLight[2];
-            for (int i = 0; i < lights.Length; i++)
-            {
-                lights[i] = new TrafficLight(this);
-                lights[i].BringToFront();
-            }
-            lights[0].setColour("Red");
-            lights[0].Rotate();
-            lights[0].Location = new Point(Section.vLanes[0].Location.X - lights[0].Width - 20, Section.hLanes[0].Location.Y - lights[0].Height - 20);
-            lights[1].Location = new Point(Section.vLanes[0].Location.X - lights[0].Width - 20, Section.hLanes[Section.hLanes.Length - 1].Location.Y + Section.hLanes[0].Height + 20);
-            ActiveLight = 1;
-        }
-
 
         private void CycleButton_Click(object sender, EventArgs e)
         {
             try
             {
                 Cycles = int.Parse(CyclesBox.Text);
-                if (Cycles > 10 || Cycles <= 0)
+                if (Cycles > 10 || Cycles < 0)
                 {
                     throw new Exception();
                 }
@@ -89,92 +69,145 @@ namespace TrafficSim
                 MessageBox.Show("Please enter a number of cycles between 1 and 10");
                 return;
             }
-            
-            
-        }
-
-        private void ChangeLights()
-        {
-            Console.WriteLine(noOfCyclesDone);
-            //Check if you need to change the lights);
-            if (noOfCyclesDone == GreenTime)
-            {
-                lights[ActiveLight].setColour("Yellow");
-            }
-            else if (noOfCyclesDone == (GreenTime + YellowTime))
-            {
-                lights[ActiveLight].setColour("Red");
-            }
-            else if (lights[ActiveLight].Colour == "Red")
-            {
-                noOfCyclesDone = 0;
-                if (ActiveLight == 0)
-                {
-                    ActiveLight = 1;
-                }
-                else
-                {
-                    ActiveLight = 0;
-                }
-                lights[ActiveLight].setColour("Green");
-            }
 
         }
 
         private void Sequence()
         {
+            Console.WriteLine(noOfCyclesDone);
+            if (noOfCyclesDone == GreenTime)
+            {
+                Section.ChangeLights();
+            }
+            else if (noOfCyclesDone == (GreenTime + YellowTime))
+            {
+                Section.ChangeLights();
+            }
+            else if (noOfCyclesDone > (GreenTime + YellowTime))
+            {
+                noOfCyclesDone = 0;
+                Section.ChangeLights();
+            }
+
+            
+            for (int i=0; i < Section.Roads[0].Lanes.Length; i++)
+            {
+                foreach (Car car in Section.Roads[0].Lanes[i].Cars)
+                {
+                    bool collided = false;
+                    foreach (Car car2 in Section.Roads[0].Lanes[i].Cars)
+                    {
+                        if (car2 != car)
+                        {
+                            if (car.CheckifCollision(car2.Bounds))
+                            {
+                                collided = true;
+                            }
+                        }
+                    }
+
+                    if ((Section.Lights[0].Colour == "Red" || Section.Lights[0].Colour == "Yellow") && (car.Location.X + car.Width - 5) < Section.Roads[1].Location.X)
+                    {
+                        Section.Roads[1].BringToFront();
+                        if (car.CheckifCollision(Section.Roads[1].Bounds))
+                        {
+                            collided = true;
+                        }
+                        if (!collided)
+                        {
+                            car.Move();
+                        }
+                    }
+                    else
+                    {
+                        car.Move();
+                    }
+                }
+            }
+
+            //Vertical Lane
+            for (int i = 0; i < Section.Roads[1].Lanes.Length; i++)
+            {
+                foreach (Car car in Section.Roads[1].Lanes[i].Cars)
+                {
+                    
+                    bool collided = false;
+                    foreach (Car car2 in Section.Roads[1].Lanes[i].Cars)
+                    {
+                        if (car2 != car)
+                        {
+                            if (car.CheckifCollision(car2.Bounds))
+                            {
+                                collided = true;
+                            }
+                        }
+                    }
+
+                    if ((Section.Lights[1].Colour == "Red" || Section.Lights[1].Colour == "Yellow") && (car.Location.Y > Section.Roads[0].Location.Y + Section.Roads[0].Height))
+                    {
+                        Section.Roads[0].BringToFront();
+                        if (car.CheckifCollision(Section.Roads[0].Bounds))
+                        {
+                            collided = true;
+                        }
+                        if (!collided)
+                        {
+                            car.Move();
+                        }
+                    }
+                    else
+                    {
+                        car.Move();
+                    }
+                }
+            }
+            if (random.Next(1, 100) <= HProb * 100)
+            {
+                Section.Roads[0].Lanes[random.Next(0, HLane)].CreateNewCar();
+            }
+            if (random.Next(1, 100) <= VProb * 100)
+            {
+                Section.Roads[1].Lanes[random.Next(0, VLane)].CreateNewCar();
+            }
+            
+                    
+
+            ++noOfCyclesDone;
+
+            /*
             ChangeLights();
 
             //Move the cars);
             foreach (Car car in Cars)
             {
-                bool canMove = true;
+                bool willCollide;
                 // For the Horizontal Lanes
                 if (car.Direction == 'H')
                 {
                     //Check if moving will collide with another car
-                    foreach (Car car2 in Cars)
-                    {
-                        if (car != car2)
-                        {
-                            if (car2.Location.X - (car.Location.X + car.Width) <= 7  && car2.Location.X - (car.Location.X + car.Width) >= 0 && car.Location.Y == car2.Location.Y)
-                            {
-                                canMove = false;
-                            }
-                        }
-                    }
-                    
+                    willCollide = WillCollide(car, car.Direction);
 
                     //Check if the cars are before a red light
-                    if ((lights[0].Colour == "Red" || lights[0].Colour == "Yellow") && (car.Location.X + car.Width - 5) < Section.block.Location.X)
+                    if ((lights[0].Colour == "Red" || lights[0].Colour == "Yellow") && (car.Location.X + car.Width - pixelGap) < Section.block.Location.X)
                     {
                         // If the car isn't going to cross the lights
                         if (car.Location.X + (car.Width * 2) >= Section.block.Location.X)
                         {}
                         else
                         {
-                            if (canMove) { car.Location = new Point(car.Location.X + car.Width + 5, car.Location.Y); }
+                            if (!willCollide) { car.Location = new Point(car.Location.X + car.Width + pixelGap, car.Location.Y); }
                         }
                     }
                     else
                     {
-                        if (canMove) { car.Location = new Point(car.Location.X + car.Width + 5, car.Location.Y); }
+                        if (!willCollide) { car.Location = new Point(car.Location.X + car.Width + pixelGap, car.Location.Y); }
                     }
                         
                 }
                 else if (car.Direction == 'V')
                 {
                     //Check if moving will collide with another car
-                    foreach (Car car2 in Cars)
-                    {
-                        if (car != car2)
-                        {
-                            if (car.Location.Y - (car2.Location.Y + car2.Height) <= 7 && car.Location.Y - (car2.Location.Y + car2.Height) >= 0 && car.Location.X == car2.Location.X)
-                            {
-                                canMove = false;
-                            }
-                        }
-                    }
+                    willCollide = WillCollide(car, car.Direction);
 
                     //Check if the cars are before a red light
                     if ((lights[1].Colour == "Red" || lights[1].Colour == "Yellow") && car.Location.Y + 5 > Section.block.Location.Y + Section.block.Height)
@@ -184,11 +217,11 @@ namespace TrafficSim
                         {}
                         else
                         {
-                            if (canMove) { car.Location = new Point(car.Location.X, car.Location.Y - car.Height - 5);}
+                            if (!willCollide) { car.Location = new Point(car.Location.X, car.Location.Y - car.Height - pixelGap); }
                         }
                     }
                     else
-                        if (canMove) { car.Location = new Point(car.Location.X, car.Location.Y - car.Height - 5); }
+                        if (!willCollide) { car.Location = new Point(car.Location.X, car.Location.Y - car.Height - pixelGap); }
                 }
             }
 
@@ -201,30 +234,9 @@ namespace TrafficSim
             addNewCars();
 
             ++noOfCyclesDone;
+             
         }
-
-        //Create new cars if probability allows and put on a random lane
-        public void addNewCars()
-        {
-            if (random.Next(1, 100) <= VProb * 100)
-            {
-                Car newCar = new Car(this);
-                newCar.Direction = 'V';
-                newCar.BringToFront();
-                newCar.Location = new Point((Section.vLanes[random.Next(0, VLane)].Location.X + 15), (Height - newCar.Height - 36));
-                Cars.Add(newCar);
-            }
-
-            if (random.Next(1, 100) <= HProb * 100)
-            {
-                Car newCar = new Car(this);
-                newCar.Direction = 'H';
-                newCar.BringToFront();
-                int randomNumber = random.Next(0, HLane);
-                newCar.Location = new Point(0, Section.hLanes[randomNumber].Location.Y + 15);
-                newCar.Rotate();
-                Cars.Add(newCar);
-            }
+             */
         }
     }
 }

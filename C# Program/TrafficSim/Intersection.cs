@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,53 +10,78 @@ namespace TrafficSim
 {
     class Intersection : Panel
     {
-        public VerticalLane[] vLanes;
-        public HorizontalLane[] hLanes;
+        public Road[] Roads;
+        public TrafficLight[] Lights;
         public IntersectionBlock block;
+        public int ActiveLight;
         private int HLane;
         private int VLane;
 
         public Intersection(Control parentForm, int HLane, int VLane)
         {
             Parent = parentForm;
+            Width = parentForm.Width;
+            Height = parentForm.Height;
             this.HLane = HLane;
             this.VLane = VLane;
-            DrawLanes();
+            DrawRoads();
+            CreateLights();
         }
 
-        public void DrawLanes()
+        public void DrawRoads()
         {
-            int position;
-
-            //Create the Vertical Lanes
-            vLanes = new VerticalLane[VLane];
-            for (int i = 0; i < vLanes.Length; i++)
-            {
-                vLanes[i] = new VerticalLane(this);
-                position = (Parent.Width / 2) - (VLane * vLanes[i].Image.Width / 2) + (vLanes[i].Image.Width * (i));
-                vLanes[i].Location = new Point(position, (Parent.Height/2) - (vLanes[i].Image.Height/2));
-            }
-
-            //Create the Horizontal Lanes
-            hLanes = new HorizontalLane[HLane];
-            for (int i = 0; i < hLanes.Length; i++)
-            {
-                hLanes[i] = new HorizontalLane(this);
-                position = (Parent.Height / 2) - (HLane * hLanes[i].Image.Height / 2) + (hLanes[i].Image.Height * (i));
-                hLanes[i].Location = new Point((Parent.Width/2) - (hLanes[i].Image.Width/2), position);
-            }
+            Roads = new Road[2];
+            Roads[0] = new Road(this, HLane, 'H');
+            Roads[1] = new Road(this, VLane, 'V');
 
             //Create the Intersection Block in the Middle
             block = new IntersectionBlock(this);
-            block.Location = new Point((Parent.Width / 2) - (VLane * vLanes[0].Image.Width / 2), (Parent.Height / 2) - (HLane * hLanes[0].Image.Height / 2));
-            block.Width = VLane * vLanes[0].Image.Width;
-            block.Height = HLane * hLanes[0].Image.Height;
+            block.Location = new Point(Roads[1].Location.X, Roads[0].Location.Y);
+            block.Width = Roads[1].Width;
+            block.Height = Roads[0].Height;
             block.BackColor = Color.Black;
-            block.BringToFront();
+            block.SendToBack();
+        }
 
-            //Set the panel to fit the intersection in it
-            Height = vLanes[0].Height;
-            Width = hLanes[0].Width;
+        private void CreateLights()
+        {
+            Lights = new TrafficLight[2];
+            for (int i = 0; i < Lights.Length; i++)
+            {
+                Lights[i] = new TrafficLight(this);
+                Lights[i].BringToFront();
+            }
+            Lights[0].setColour("Red");
+            Lights[1].setColour("Green");
+            Lights[0].Rotate();
+            Lights[0].Location = new Point(Roads[1].Location.X - Lights[0].Width - 20, Roads[0].Location.Y - Lights[0].Height - 20);
+            Lights[1].Location = new Point(Roads[1].Location.X - Lights[0].Width - 20, Roads[0].Location.Y + Roads[0].Height + 20);
+            ActiveLight = 1;
+        }
+
+        public void ChangeLights()
+        {
+            if (Lights[ActiveLight].Colour == "Green")
+            {
+                Lights[ActiveLight].setColour("Yellow");
+            }
+            else if (Lights[ActiveLight].Colour == "Yellow")
+            {
+                Lights[ActiveLight].setColour("Red");
+            }
+            else if (Lights[ActiveLight].Colour == "Red")
+            {
+                if (ActiveLight == 0)
+                {
+                    ActiveLight = 1;
+                }
+                else
+                {
+                    ActiveLight = 0;
+                }
+                Lights[ActiveLight].setColour("Green");
+            }
+
         }
     }
 }
