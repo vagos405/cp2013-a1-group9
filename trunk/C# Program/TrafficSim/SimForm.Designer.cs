@@ -85,8 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 756);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(832, 750);
             this.Controls.Add(this.CycleLabel);
             this.Controls.Add(this.CyclesBox);
             this.Controls.Add(this.label1);
